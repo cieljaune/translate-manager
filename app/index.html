@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ABTasty | Translate words manager</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="app.css"/>
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body ng-cloak>
+  <nav ng-show="loggedIn">
+    <div class="nav-wrapper blue-grey darken-1">
+      <a href="#!" class="brand-logo">Translate Words</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#/dashboard">Home</a></li>
+        <li><a href="#/account">Account</a></li>
+        <li><a href="#/account/logout" class="waves-effect waves-light btn pink">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div ng-view></div>
+
+  <div class="right-align">ABTasty | Translate words manager v<span app-version></span></div>
+
+  <!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.x/angular.min.js"></script>
+<script src="//cdn.firebase.com/js/client/2.2.x/firebase.js"></script>
+<script src="//cdn.firebase.com/libs/angularfire/1.0.x/angularfire.min.js"></script>
+-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.9/angular-materialize.min.js"></script>
+
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB1EPp3Nn4p0q2VlMSHs2qXHoRzu9CYQa8",
+    authDomain: "translatewords-508b3.firebaseapp.com",
+    databaseURL: "https://translatewords-508b3.firebaseio.com",
+    storageBucket: "translatewords-508b3.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+  <script src="app.js"></script>
+  <script src="config.js"></script>
+
+  <script src="components/appversion/appversion-directive.js"></script>
+  <script src="components/auth/auth.js"></script>
+  <script src="components/firebase.utils/firebase.utils.js"></script>
+  <script src="components/ngcloak/ngcloak-decorator.js"></script>
+  <script src="components/reverse/reverse-filter.js"></script>
+  <script src="components/security/security.js"></script>
+
+  <script src="home/home.js"></script>
+  <script src="dashboard/dashboard.js"></script>
+  <script src="account/account.js"></script>
+  <script src="chat/chat.js"></script>
+  <script src="login/login.js"></script>
+</body>
+</html>
